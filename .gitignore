@@ -2,6 +2,11 @@
 .gradle/
 build/
 
+#Test files
+app/src/androidTest/
+app/src/test/
+
+
 # Local configuration file (sdk path, etc)
 local.properties
 
