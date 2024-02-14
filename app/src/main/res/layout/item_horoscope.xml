@@ -9,7 +9,10 @@
         android:id="@+id/horoscopeImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/aries_sign"/>
+        android:src="@drawable/aries_sign"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"/>
 
     <TextView
         android:id="@+id/horoscopeTextView"
@@ -17,5 +20,8 @@
         android:layout_height="wrap_content"
         android:textSize="50sp"
         android:textColor="@color/galaxyBlue"
-        android:text="@string/Horoscope"/>
+        android:text="@string/Horoscope"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"/>
 </LinearLayout>
