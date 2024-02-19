@@ -10,8 +10,8 @@
     <string name="horoscope_name_scorpio">Scorpio</string>
     <string name="horoscope_name_sagittarius">Sagittarius</string>
     <string name="horoscope_name_capricorn">Capricorn</string>
-    <string name="horoscope_name_aquarius">Capricorn</string>
-    <string name="horoscope_name_piscies">Piscies</string>
+    <string name="horoscope_name_aquarius">Aquarius</string>
+    <string name="horoscope_name_piscies">Pisces</string>
     <string name="Horoscope">Horoscope</string>
 
 </resources>
