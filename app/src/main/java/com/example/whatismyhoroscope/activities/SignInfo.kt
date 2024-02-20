@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources
 import com.example.horoscope.data.HoroscopeProvider
 import com.example.whatismyhoroscope.R
 import kotlinx.coroutines.CoroutineScope
@@ -23,9 +22,8 @@ class SignInfo : AppCompatActivity() {
 
         //var horoscopeName:String? = null
 
-        var horoscopeNameId = intent.getIntExtra("HOROSCOPE_NAME", -1)
-        val horoscopeImageId = intent.getIntExtra("HOROSCOPE_IMAGE", -1)
-        val horoscopeDateId = intent.getStringExtra("HOROSCOPE_DATE")
+        var horoscopeId = intent.getStringExtra("HOROSCOPE_ID")
+        var horoscope = HoroscopeProvider().getHoroscope(horoscopeId!!)
 
         dateTextView = findViewById(R.id.signDateTextView)
         nameTextView = findViewById(R.id.nameTextView)
@@ -33,13 +31,13 @@ class SignInfo : AppCompatActivity() {
         horoscopeInfo= findViewById(R.id.horoscopeInfoTextView)
 
 
-        nameTextView.text = getString(horoscopeNameId)
-        signImageView.setImageResource(horoscopeImageId)
-        dateTextView.text=horoscopeDateId
+        nameTextView.text = getString(horoscope.name)
+        signImageView.setImageResource(horoscope.image)
+        dateTextView.text=horoscope.date
 
         //nameTextView.text= horoscopeName
 
-        getHoroscopeInfo(getString(horoscopeNameId))
+        getHoroscopeInfo(horoscopeId)
     }
 
 

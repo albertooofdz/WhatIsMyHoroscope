@@ -1,6 +1,6 @@
 package com.example.whatismyhoroscope.data
 
-class Horoscope (val image:Int, val name:Int, val date:String) {
+class Horoscope (val id:String, val image:Int, val name:Int, val date:String) {
     /*class  Aries(image: Int, name: Int) : Horoscope(image, name)
     class  Taurus(image: Int, name: Int) : Horoscope(image, name)
     class  Gemini(image: Int, name: Int) : Horoscope(image, name)

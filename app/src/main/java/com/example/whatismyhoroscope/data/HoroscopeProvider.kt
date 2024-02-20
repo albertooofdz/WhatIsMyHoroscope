@@ -1,6 +1,8 @@
 package com.example.horoscope.data
 
 import android.util.Log
+import com.example.whatismyhoroscope.R
+import com.example.whatismyhoroscope.data.Horoscope
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
@@ -12,6 +14,38 @@ import java.net.URLConnection
 import javax.net.ssl.HttpsURLConnection
 
 class HoroscopeProvider {
+
+
+    private var horoscopeList:List<Horoscope> = listOf(
+
+        Horoscope("Aquarius", R.drawable.aquarius_sign, R.string.horoscope_name_aquarius, "Jan 20-Feb 18"),
+        Horoscope("Aries" , R.drawable.aries_sign, R.string.horoscope_name_aries,"March 21-April 19"),
+        Horoscope("Cancer", R.drawable.cancer_sign, R.string.horoscope_name_cancer,"June 21-July 22"),
+        Horoscope("Capricorn" , R.drawable.capricorn_sign, R.string.horoscope_name_capricorn,"December 22-January 19"),
+        Horoscope("Gemini" , R.drawable.gemini_sign, R.string.horoscope_name_gemini,"May 21-June 20"),
+        Horoscope("Leo", R.drawable.leo_sign, R.string.horoscope_name_leo,"July 23-August 22"),
+        Horoscope("Libra", R.drawable.libra_sign, R.string.horoscope_name_libra,"September 23-October 22"),
+        Horoscope("Piscies", R.drawable.piscies_sign, R.string.horoscope_name_piscies,"Feb 19-March 20"),
+        Horoscope("Saggitarius", R.drawable.sagittarius_sign, R.string.horoscope_name_sagittarius,"November 22-December 21"),
+        Horoscope("Scorpio" , R.drawable.scorpio_sign, R.string.horoscope_name_scorpio,"October 23-November 21"),
+        Horoscope("Taurus" , R.drawable.taurus_sign, R.string.horoscope_name_taurus,"April 20-May 20"),
+        Horoscope("Virgo", R.drawable.virgo_sign, R.string.horoscope_name_virgo,"August 23-September 22"),
+
+    )
+
+    fun getHoroscopes() :List<Horoscope> {
+        return horoscopeList
+    }
+
+    fun getHoroscope(id:String):Horoscope {
+        return horoscopeList.filter {it.id==id}.first()
+
+    }
+
+
+
+
+
     suspend fun getHoroscopeLuck(horoscopeId: String): String? {
         val url = URL("https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=$horoscopeId&day=TODAY") // URL de la API o endpoint
         var connection: HttpsURLConnection? = null
