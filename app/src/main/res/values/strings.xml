@@ -13,5 +13,8 @@
     <string name="horoscope_name_aquarius">Aquarius</string>
     <string name="horoscope_name_piscies">Pisces</string>
     <string name="Horoscope">Horoscope</string>
+    <string name="menu_search" />
+    <string name="menu_prev" />
+    <string name="menu_next" />
 
 </resources>
